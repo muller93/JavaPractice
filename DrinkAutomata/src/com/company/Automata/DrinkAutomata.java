@@ -32,7 +32,7 @@ public class DrinkAutomata extends EmptyAutomata {
         else if (getAvalaibleGlasses() > 0 && isUsable()){
             System.out.println("We release the drink. Returning: " + (put - price));
             setAvalaibleGlasses(getAvalaibleGlasses() - 1);
-            moneyPutIn(put);
+            moneyPutIn(put - price);
             }
         }
 

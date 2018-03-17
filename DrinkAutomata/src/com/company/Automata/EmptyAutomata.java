@@ -3,7 +3,7 @@ package com.company.Automata;
 import com.company.Distributor;
 
 public class EmptyAutomata{
-    private int moneyIn = 0;
+    private int moneyIn;
     private int avalaibleGlasses;
     private boolean usable = true;
 
