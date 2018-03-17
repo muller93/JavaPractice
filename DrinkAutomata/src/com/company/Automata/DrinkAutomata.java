@@ -3,10 +3,10 @@ package com.company.Automata;
 public class DrinkAutomata extends EmptyAutomata {
     private boolean coldHot;
 
-    /*public DrinkAutomata(int moneyIn, int avalaibleGlasses, boolean usable, boolean coldHot) {
+    public DrinkAutomata(int moneyIn, int avalaibleGlasses, boolean usable, boolean coldHot) {
         super(moneyIn, avalaibleGlasses, usable);
         this.coldHot = coldHot;
-    }*/
+    }
     public DrinkAutomata(int avalaibleGlasses, boolean coldHot){
         super(avalaibleGlasses);
         this.coldHot = coldHot;
