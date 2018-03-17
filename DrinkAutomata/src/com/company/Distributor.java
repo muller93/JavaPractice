@@ -16,7 +16,7 @@ public class Distributor {
         info(drinkauto);
         drinkauto.moneyPutIn(150);
         info(drinkauto);
-        drinkauto.moneyPutIn(90);
+        drinkauto.moneyPutIn(200);
         info(drinkauto);
         drinkauto.moneyPutIn(59);
         info(drinkauto);

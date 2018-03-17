@@ -21,10 +21,10 @@ public class DrinkAutomata extends EmptyAutomata {
     }
 
     @Override
-    public void moneyPutIn(int put) {
+    public void moneyPutIn(int put) { //a visszajárót nem számolja hozzá a pénzünkhöz. vagy nem is kell?
         int price = 95;
         if (getAvalaibleGlasses() <= 0 || !isUsable()){
-            System.out.println("Try later.");
+            System.out.println("The machine is not working. Try later.");
         }
         else if (put < price){
             System.out.println("Please put in more money.");
