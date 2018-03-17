@@ -3,10 +3,10 @@ package com.company.Automata;
 public class DrinkAutomata extends EmptyAutomata {
     private boolean coldHot;
 
-    public DrinkAutomata(int moneyIn, int avalaibleGlasses, boolean usable, boolean coldHot) {
+    /*public DrinkAutomata(int moneyIn, int avalaibleGlasses, boolean usable, boolean coldHot) {
         super(moneyIn, avalaibleGlasses, usable);
         this.coldHot = coldHot;
-    }
+    }*/
     public DrinkAutomata(int avalaibleGlasses, boolean coldHot){
         super(avalaibleGlasses);
         this.coldHot = coldHot;
@@ -21,19 +21,19 @@ public class DrinkAutomata extends EmptyAutomata {
     }
 
     @Override
-    public void moneyPutIn(int put) { //felülírás. az emptyautomatanál vissza kell írni
+    public void moneyPutIn(int put) {
+        int price = 95;
         if (getAvalaibleGlasses() <= 0 || !isUsable()){
             System.out.println("Try later.");
         }
-        if (put < 95){
+        else if (put < price){
             System.out.println("Please put in more money.");
         }
-        if (put > 95){
-            System.out.println("We release the drink. Returning: " + (put - 95));
-        }
-        if (put >= 95 && getAvalaibleGlasses() > 0 && isUsable()){ //a poharakat és a pénzt még változtatni kell
-
-            };
+        else if (getAvalaibleGlasses() > 0 && isUsable()){
+            System.out.println("We release the drink. Returning: " + (put - price));
+            setAvalaibleGlasses(getAvalaibleGlasses() - 1);
+            moneyPutIn(put);
+            }
         }
 
 

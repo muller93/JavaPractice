@@ -6,10 +6,28 @@ import com.company.Automata.EmptyAutomata;
 public class Distributor {
 
     public static void main(String[] args) {
+        Distributor dist = new Distributor();
+        EmptyAutomata empty = new EmptyAutomata(12, 15, true);
+        DrinkAutomata drinkauto = new DrinkAutomata(3, true);
 
+        info(drinkauto);
+
+        drinkauto.moneyPutIn(50);
+        info(drinkauto);
+        drinkauto.moneyPutIn(150);
+        info(drinkauto);
+        drinkauto.moneyPutIn(90);
+        info(drinkauto);
+        drinkauto.moneyPutIn(59);
+        info(drinkauto);
+        drinkauto.moneyPutIn(105);
+        info(drinkauto);
+        drinkauto.moneyPutIn(110);
+        info(drinkauto);
     }
-    public static void info(DrinkAutomata[] automata){
 
+    public static void info(DrinkAutomata da) {
+        System.out.println("Remaining glasses: " + da.getAvalaibleGlasses() + " Money in the machine: " + da.getMoneyIn());
     }
 }
 /*. Írjunk egy Forgalmazo nevű futtatható osztályt, amely maradjon csomagon kívüli (de lássa az automata csomagot).
