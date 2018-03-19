@@ -15,12 +15,23 @@ public class Main {
         Fruits[] fruits = {new Fruits(args[2], args[3], Double.parseDouble(args[4])),
                            new Fruits(args[5], args[6], Double.parseDouble(args[7])),
                            new Fruits(args[8], args[9], Double.parseDouble(args[10]))};
-        
+
+        Main market = new Main();
+        double customerSpending = market.buying(customer, fruits);
+        double grannySpending = market.buying(mama, fruits);
+        System.out.println(customerSpending);
+        System.out.println(customer);
+        System.out.println(grannySpending);
+        System.out.println(mama);
+        if(grannySpending < customerSpending) {
+            System.out.println("Granny is the price king!");
+        }
+/*
         buying(customer, fruits);
         System.out.println(buying(customer, fruits));
         buying(mama, fruits);
         System.out.println(buying(mama, fruits));
-
+*/
     }
     public static double buying(Customer customer, Fruits[] fruits){
         double startMoney = customer.getMoney();

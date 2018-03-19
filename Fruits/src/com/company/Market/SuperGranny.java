@@ -43,9 +43,12 @@ public class SuperGranny extends Customer {
 
     @Override
     public String toString() {
-        return "The customer is Super Granny";
+        return "SuperGranny{" +
+                "haggle=" + haggle +
+                '}';
     }
 }
+
 /*A Vásárló osztályból származzon egy szuperNagyi osztály mely egy attribútummal rendelkezik
 a vásárló attributúmain kívűl, amivel azt szeretnénk jelezni, hogy a nagymama rendelkezik-e
  az alkudozás képességgel. Ez véletlen legyen, azaz random számmal döntsük el egy nagyiról,
