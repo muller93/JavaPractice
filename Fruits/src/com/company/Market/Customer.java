@@ -32,7 +32,7 @@ public class Customer{
     public void shopping(Fruits fruit){
         if (money < fruit.getPrice()){
             System.out.println("Unfortunetly, we cant buy this fruit.");
-        }else if (!fruit.getColor().equals("Green")){
+        }else if (!fruit.getColor().equals("green")){
             System.out.println("Sorry, we just buy only green fruits.");
         }else {
             getBasket()[fruit.getFruitCount()] = fruit;

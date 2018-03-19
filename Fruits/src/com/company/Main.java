@@ -7,14 +7,15 @@ import com.company.Market.SuperGranny;
 public class Main {
 
     public static void main(String[] args) {
-        if (args.length < 13){
-            System.out.println("Please give 13 arguments.");
+        if (args.length < 11){
+            System.out.println("Please give 11 arguments.");
         }
 	    SuperGranny mama = new SuperGranny(Integer.parseInt(args[0]), Double.parseDouble(args [1]));
         Customer customer = new Customer(Integer.parseInt(args[0]), Double.parseDouble(args[1]));
         Fruits[] fruits = {new Fruits(args[2], args[3], Double.parseDouble(args[4])),
                            new Fruits(args[5], args[6], Double.parseDouble(args[7])),
                            new Fruits(args[8], args[9], Double.parseDouble(args[10]))};
+        
         buying(customer, fruits);
         System.out.println(buying(customer, fruits));
         buying(mama, fruits);

@@ -43,6 +43,16 @@ public class Fruits {
     public void setFruitCount(int fruitCount) {
         this.fruitCount = fruitCount;
     }
+
+    @Override
+    public String toString() {
+        return "Fruits{" +
+                "price=" + price +
+                ", color='" + color + '\'' +
+                ", species='" + species + '\'' +
+                ", fruitCount=" + fruitCount +
+                '}';
+    }
 }
 /*Készíts egy gyümölcs nevű osztályt, mely a következő adattagokkal rendelkezik ár,
  szin (ez csak zöld, sárga, és piros lehet), fajta. Mindhárom adattagra legyen igaz az,

@@ -21,7 +21,7 @@ public class SuperGranny extends Customer {
     public void shopping(Fruits fruit) {
         if (getMoney() < fruit.getPrice() * 0.9){
             System.out.println("Unfortunetly, we cant buy this fruit.");
-        }else if (!fruit.getColor().equals("Green") || !fruit.getColor().equals("Yellow")){
+        }else if (!fruit.getColor().equals("green") || !fruit.getColor().equals("yellow")){
             System.out.println("Sorry, we just buy only green and yellow fruits.");
         }
         else if (haggle && (Math.random() < 0.75)){
