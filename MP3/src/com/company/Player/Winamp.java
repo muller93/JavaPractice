@@ -6,16 +6,15 @@ import java.util.ArrayList;
 
 public class Winamp {
     public static void main(String[] args) {
-        Winamp winamp = new Winamp(Integer.parseInt(args[0]));
+    Winamp winamp = new Winamp(Integer.parseInt(args[0]));
     winamp.adding(new Mp3("Daft Punk", "Homework", "Around the world", 430));
     winamp.adding(new Mp3("Fatboy Slim","You've Come a Long Way, Baby", "Right here, right now", 347));
     winamp.adding(new Mp3("Crystal Castles", "Crystal Castles (II)", "Not in love", 226));
 
-        System.out.println("The average length of the songs is: " + winamp.avgLength(winamp.songs) + " seconds.");
-        winamp.songList(winamp.songs);
+    System.out.println("The average length is: " + winamp.avgLength(winamp.songs) + " seconds.");
+    winamp.songList(winamp.songs);
 
     }
-
     private Mp3[] songs;
     private int songsLength;
     private int counter = 0;
@@ -24,6 +23,9 @@ public class Winamp {
         this.songs = new Mp3[songsLength];
     }
 
+    public int getSongsLength() {
+        return songsLength;
+    }
 
     public void adding(Mp3 song){
         if (counter < songs.length){
@@ -52,10 +54,4 @@ public class Winamp {
             info(query(i));
         }
     }
-
 }
-/*Hozz létre pár mp3 és mp4 objektumot és rakd bele a Winamp objektum tömbjébe őket
-      a hozzaad() metódus segítségével. A tömbben lévő összes objektumra hívd meg az
-       info() metódust. Továbbá számítsd ki a tömbben lévő file-ok átlag hosszúságát!
-
-*/

@@ -31,11 +31,3 @@ public class Videoclip extends Mp3 {
         return super.toString() + ", picture size is " + pictureLength + ":" + pictureWidth;
     }
 }
-/*Készíts VideoClip osztályt a media csomagon belül, mely származik az MP3 osztályból.
- Az MP3 jellemzőin felül az osztály rendelkezzen a videó kép szélességével és hosszúságával!
-  Készíts paraméteres konstruktort, ami inicializálja az őstől örökölt adattagokat is az ős
-  konstruktor meghívásával. A szélesség és hosszúság attribútumokhoz is valósítsd meg a getter()
-   és setter() metódusokat. Írj toString() metódust az osztálynak, mely az ős osztály toString()
-    metódusát is meghívja, továbbá hozzáilleszti a „ , képmérete pedig XY : XY” szöveget
-    a visszaadott stringhez.
-*/
