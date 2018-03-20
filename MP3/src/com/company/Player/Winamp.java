@@ -2,8 +2,6 @@ package com.company.Player;
 
 import com.company.Media.Mp3;
 
-import java.util.ArrayList;
-
 public class Winamp {
     public static void main(String[] args) {
     Winamp winamp = new Winamp(Integer.parseInt(args[0]));
@@ -13,8 +11,8 @@ public class Winamp {
 
     System.out.println("The average length is: " + winamp.avgLength(winamp.songs) + " seconds.");
     winamp.songList(winamp.songs);
-
     }
+
     private Mp3[] songs;
     private int songsLength;
     private int counter = 0;
