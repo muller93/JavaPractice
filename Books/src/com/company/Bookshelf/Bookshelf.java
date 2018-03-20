@@ -8,7 +8,18 @@ public class Bookshelf {
     public static void main(String[] args) {
         Bookshelf shelf = new Bookshelf();
         Book[] books = shelf.getBook(args);
+
+        printArray(books);
     }
+    public static void bookWrite(Book book){
+        System.out.println(book);
+    }
+    public static void printArray(Book[] books){
+        for (int i = 0; i < books.length; i++){
+            bookWrite(books[i]);
+        }
+    }
+
     public Book[] getBook(String[] args){
         Book[] books = new Book[args.length / 4];
         int counter = 0;
