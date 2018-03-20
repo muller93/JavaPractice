@@ -7,10 +7,21 @@ public class Bookshelf {
 
     public static void main(String[] args) {
         Bookshelf shelf = new Bookshelf();
-        //Book[] books = new Book[];
+        Book[] books = shelf.getBook(args);
     }
-    public void bookWrite(){
-        System.out.println(Book);
+    public Book[] getBook(String[] args){
+        Book[] books = new Book[args.length / 4];
+        int counter = 0;
+        for (int i = 0; i < args.length; i += 4){
+            Book firstBook = new Book(args[i], args[i + 1], args[i + 2], Integer.parseInt(args[i + 3]));
+            books[counter] = firstBook;
+            counter++;
+        }
+        return books;
+    }
+
+    public void putBook(){
+
     }
 }
 /*Hozz létre egy Konyvespolc osztályt mely a konyvespolc csomagban található!

@@ -12,12 +12,12 @@ public class Book {
         this.publisher = publisher;
         this.releaseDate = releaseDate;
     }
-    public Book(){
+    /*public Book(){
         this.title = "Objektumorientált Tervezés és Programozás";
         this.writer = "Angster Erzsébet";
         this.publisher = "Kiskapu";
         this.releaseDate = 2001;
-    }
+    }*/
 
     public String getTitle() {
         return title;
