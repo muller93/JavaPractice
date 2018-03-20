@@ -57,7 +57,7 @@ public class Mp3 {
     @Override
     public String toString() {
         return "This song from " + performer + ", which name is " + songTitle
-                + " it's on the " + album + "title album, the length: " + songLength;
+                + " it's on the " + album + " title album, the length: " + songLength;
     }
 }
 /*Készíts egy Mp3 nevű osztályt és helyezd a media csomagba. Az osztály rendelkezzen
