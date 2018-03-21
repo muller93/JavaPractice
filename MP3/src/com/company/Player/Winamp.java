@@ -55,16 +55,3 @@ public class Winamp {
         }
     }
 }
-/*Írj Winamp nevű osztályt és helyezd a lejátszó csomagba.
- Az osztály rendelkezzen egy Mp3 típusú tömbbel és a tömb méretével.
- A méretet a konstruktor várja paraméterként. Írj getter() metódust a méret lekérdezésére.
-  Írj hozzaad() metódust, ami egy Mp3 típusú objektumot vár és beteszi az objektumot a tömbbe.
-  Írj lekerdez() metódust, melynek paramétere egy egész szám (i).
-  A metódus térjen vissza az i-dik objektummal a tömbből.
-   Írj egy info() metódust, mely egy Mp3 típusú objektumot vár paraméterül és kiírja
-   az objektum adatait a toString() metódus segítségével. Tedd az osztályt futtathatóvá!
-    Példányosít egy Winamp objektumot a main metódusban, a hozzá szükséges paramétert
-     parancssori paraméterként kapod. Hozz létre pár mp3 és mp4 objektumot
-      és rakd bele a Winamp objektum tömbjébe őket a hozzaad() metódus segítségével.
-       A tömbben lévő összes objektumra hívd meg az info() metódust.
-        Továbbá számítsd ki a tömbben lévő file-ok átlag hosszúságát! */
