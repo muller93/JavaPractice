@@ -1,6 +1,7 @@
 package com.company.Player;
 
 import com.company.Media.Mp3;
+import com.company.Media.Videoclip;
 
 public class Winamp {
     public static void main(String[] args) {
@@ -8,6 +9,7 @@ public class Winamp {
     winamp.adding(new Mp3("Daft Punk", "Homework", "Around the world", 430));
     winamp.adding(new Mp3("Fatboy Slim","You've Come a Long Way, Baby", "Right here, right now", 347));
     winamp.adding(new Mp3("Crystal Castles", "Crystal Castles (II)", "Not in love", 226));
+    winamp.adding(new Videoclip("Linkin Park", "Hybrid Theory", "In the end", 217, 1080, 720));
 
     System.out.println("The average length is: " + winamp.avgLength(winamp.songs) + " seconds.");
     winamp.songList(winamp.songs);
