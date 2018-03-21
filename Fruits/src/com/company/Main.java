@@ -20,18 +20,12 @@ public class Main {
         double customerSpending = market.buying(customer, fruits);
         double grannySpending = market.buying(mama, fruits);
         System.out.println(customerSpending);
-        System.out.println(customer);
+        //System.out.println(customer);
         System.out.println(grannySpending);
-        System.out.println(mama);
+        //System.out.println(mama);
         if(grannySpending < customerSpending) {
             System.out.println("Granny is the price king!");
         }
-/*
-        buying(customer, fruits);
-        System.out.println(buying(customer, fruits));
-        buying(mama, fruits);
-        System.out.println(buying(mama, fruits));
-*/
     }
     public static double buying(Customer customer, Fruits[] fruits){
         double startMoney = customer.getMoney();

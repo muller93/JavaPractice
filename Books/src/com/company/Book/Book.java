@@ -60,4 +60,3 @@ public class Book {
                 ", released " + releaseDate;
     }
 }
-/**/

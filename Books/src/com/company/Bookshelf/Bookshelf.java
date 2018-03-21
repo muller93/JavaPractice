@@ -2,12 +2,14 @@
 package com.company.Bookshelf;
 
 import com.company.Book.Book;
+import com.company.Book.Novel;
+import com.company.Book.SchoolBook;
 
 public class Bookshelf {
 
     public static void main(String[] args) {
         Bookshelf shelf = new Bookshelf();
-        Book[] books = shelf.getBook(args);
+        Book[] books = shelf.putBook(args);
 
         printArray(books);
     }
@@ -20,25 +22,30 @@ public class Bookshelf {
         }
     }
 
-    public Book[] getBook(String[] args){
-        Book[] books = new Book[args.length / 4];
+    public Book[] putBook(String[] args){
+        int length = 0;
         int counter = 0;
-        for (int i = 0; i < args.length; i += 4){
-            Book firstBook = new Book(args[i], args[i + 1], args[i + 2], Integer.parseInt(args[i + 3]));
-            books[counter] = firstBook;
-            counter++;
+        for (int i = 0; i < args.length; i++){
+            if (args[i].equals("regény")){
+                length++;
+            } else if (args[i].equals("tankönyv")){
+                length++;
+            }
+        }
+        Book[] books = new Book[length];
+        for (int i = 0; i < args.length; i++){
+            if (args[i].equals("regény")){
+                Novel novel = new Novel(args[i + 1], args[i + 2], args[i + 3], Integer.parseInt(args[i + 4]));
+                books[counter] = novel;
+                counter++;
+                i += 4;
+            } else if (args[i].equals("tankönyv")){
+                SchoolBook schoolBook = new SchoolBook(args[i + 1], args[i + 2], args[i + 3], Integer.parseInt(args[i + 4]), args[i + 5]);
+                books[counter] = schoolBook;
+                counter++;
+                i += 5;
+            }
         }
         return books;
     }
-
-    public void putBook(){
-
-    }
 }
-/*Hozz létre egy Konyvespolc osztályt mely a konyvespolc csomagban található!
- Legyen a Konyvespolc osztálynak egy Konyv tömbje, ami képes a könyveket eltárolni.
- Ezenkívül tartalmazzon egy polcraTesz() metódust, amely egy könyvet a tömbbe teszi.
- Tedd a Konyvespolc osztályt futtathatóvá: a főprogram a parancssori paraméterek alapján hozzon
-  létre tankonyv és regeny objektumokat, amelyeket helyezz a polcra! Írasd ki a konyvespolcon lévő
-   konyv objektumokat a standard outputra! A program futása végén írasd ki a létrehozott regeny objektumok számát!
-Példa bemenet: java Regeny Egri_csillagok,Gárdonyi_Géza,Móra,1901 Tankonyv Kalkulus1,Toth_Istvan,Tankönyv_kiadó,1997*/
