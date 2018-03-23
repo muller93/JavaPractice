@@ -40,12 +40,3 @@ public final class Car extends Vehicle implements Motorized{
      return getFuelQuantaty();
     }
 }
-/*Írjunk továbbá egy Gepkocsi osztályt is, mely szintén a Jarmu osztályból származik,
-          de tovább már nem örökölhető és megvalósítja a Motorizalt interfészt úgy,
-          hogy lesz egy új adattagja az üzemanyag mennyiségének számontartásához.
-          Ennek értéke kezdetben legyen 50. Az indulas metódus leellenőrzi az
-          elromlott változót és az üzemanyag mértékét. Ha a jármű elromlott,
-          ElromlottException-t dob, ha pedig az üzemanyag értéke <= 0, NincsUzemanyagException-t.
-           Ha ezek egyike sem áll fenn, kiír valamit a képernyőre és csökkenti az
-            üzemanyag mennyiségét. A Motorizalt interfészből származó két metódusa
-             értelemszerű műveleteket végez.*/

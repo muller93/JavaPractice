@@ -24,7 +24,6 @@ public class Traffic {
             } catch (Bad bad) {
                 bad.printStackTrace();
             }
-            }
             while (true) {
                 try {
                     vehicle1.starting();
@@ -33,12 +32,6 @@ public class Traffic {
                     break;
                 }
             }
-
+        }
     }
 }
-/* Készítsünk egy Kozlekedes osztályt, mely futtatható, és létrehoz egy járművekből
-        álló List-et (valamelyik megvalósítással). Ebbe először elhelyez két kerékpárt és két
-        gépkocsit. A második kerékpárt a listába helyezés előtt „el kell rontani”.
-        Ezután a listában szereplő összes járművet meg kell próbálni elindítani.
-        Ezután hozzunk létre egy Jarmu típusú változót, és adjunk neki értékül egy új
-        Gepkocsi példányt. Ezt elindítjuk mindaddig, míg ki nem fogy az üzemanyag.*/

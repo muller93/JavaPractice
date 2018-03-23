@@ -44,10 +44,3 @@ public abstract class Vehicle {
     }
     public abstract void starting() throws Bad;
 }
-/*Írj egy Jarmu nevű absztrakt osztályt, mely a következő adatokat tartalmazza:
-    súly, maximális sebesség és egy logikai változó, hogy elromlott-e.
-    Az összes adattaghoz legyen getter és setter metódus. Kell egy konstruktor,
-    ami inicializálja a súlyt és a sebességet a paraméterei alapján.
-     Definiáljuk felül a toString metódust. Írjunk továbbá egy absztrakt indulas metódust,
-      melynek nincs paramétere vagy visszaadott értéke, de dobhat ElromlottException
-       típusú kivételt.*/
