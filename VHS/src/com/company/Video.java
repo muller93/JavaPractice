@@ -13,8 +13,9 @@ public class Video implements Loan{
         this.ageLimit = ageLimit;
     }
 
+
     @Override
-    public boolean rent(int age, int howLongLoan) throws ErrorLoan {
+    public boolean rent(int one, int two) throws ErrorLoan {
         return false;
     }
 
