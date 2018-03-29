@@ -21,17 +21,14 @@ public class Railway {
 
     public ArrayList getTrain(String[] args) {
         ArrayList<Train> trainList = new ArrayList<>();
-        int counter = 0;
         for (int i = 0; i < args.length; i++){
                 if (args[i].equals("passenger")){
                     PassengerTrain steamer = new PassengerTrain(args[i+1], args[i+2], Integer.parseInt(args[i+3]),Integer.parseInt(args[i+4]),Integer.parseInt(args[i+5]));
                     i += 5;
                     trainList.add(steamer);
-                    counter++;
                 }else if (args[i].equals("goods")){
                     GoodsTrain sihuhu = new GoodsTrain(args[i+1], args[i+2], Integer.parseInt(args[i+3]), Integer.parseInt(args[i+4]), args[i+5], Integer.parseInt(args[i+6]));
                     trainList.add(sihuhu);
-                    counter++;
                     i += 6;
                 }
             }
