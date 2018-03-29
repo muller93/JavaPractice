@@ -35,7 +35,7 @@ public class F1Car extends Car{
     public String toString() {
         return "F1 Car " +
                 "pilot: " + pilot +
-                ", competitiveness " + competitiveness();
+                ", competitiveness " + competitiveness() + "\n";
     }
 }
 /*3. Írj egy F1Auto nevű osztályt Forma-1-es versenyautók reprezentálása.
