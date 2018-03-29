@@ -10,21 +10,6 @@ public class F1Car extends Car{
         this.options = options;
     }
 
-    public String getPilot() {
-        return pilot;
-    }
-
-    public void setPilot(String pilot) {
-        this.pilot = pilot;
-    }
-
-    public double getOptions() {
-        return options;
-    }
-
-    public void setOptions(double options) {
-        this.options = options;
-    }
 
     @Override
     public double competitiveness() {

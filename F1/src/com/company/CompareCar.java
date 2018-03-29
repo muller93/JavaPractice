@@ -1,10 +1,9 @@
 package com.company;
 
 import com.company.Vehicle.F1Car;
-
 import java.util.Comparator;
 
-class Comp implements Comparator<F1Car> {
+public class CompareCar implements Comparator<F1Car> {
     @Override
     public int compare(F1Car f1Car, F1Car t1) {
         if (f1Car.competitiveness() == t1.competitiveness()){

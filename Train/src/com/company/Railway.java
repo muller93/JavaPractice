@@ -13,7 +13,7 @@ public class Railway {
     public static void main(String[] args) {
         Railway railway = new Railway(); //statikusság elkerülése érdekében
 
-        ArrayList<Train> trainList;
+        ArrayList trainList;
         trainList = railway.getTrain(args);
         Collections.sort(trainList, new CompareTrain());
         System.out.println(trainList.get(0));
