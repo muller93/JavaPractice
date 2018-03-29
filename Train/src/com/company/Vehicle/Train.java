@@ -64,6 +64,6 @@ public class Train{
                 ", destination: " + destination  +
                 ", (distance:" + distance +
                 " km), average Speed:" + avgSpeed +
-                "km/h.";
+                "km/h." + "\n";
     }
 }
