@@ -7,6 +7,6 @@ public class Main {
         System.out.println(trash.dice()); // dice ok
 
     LuckyCard luckyCard = new LuckyCard();
-        luckyCard.luckyCards();
+        luckyCard.luckyCards(); //kiírja a szerencsekártya nevét, plusz módosítja a player egyenlegét
     }
 }
