@@ -3,6 +3,15 @@ package com.company;
 public class Player {
     private int money;
     private Object furniture;
+    private boolean insure = false;
+
+    public boolean isInsure() {
+        return insure;
+    }
+
+    public void setInsure(boolean insure) {
+        this.insure = insure;
+    }
 
     public int getMoney() {
         return money;
