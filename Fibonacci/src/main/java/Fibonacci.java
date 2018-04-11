@@ -1,6 +1,6 @@
 import java.text.NumberFormat;
 
-public class Fibonacchi {
+public class Fibonacci {
 
     public static void main(String[] args) {
         //util
@@ -20,7 +20,7 @@ public class Fibonacchi {
         sb.append(", max memory: " + format.format(maxMemory / 1024));
         System.out.println(sb.append(", total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024)));
 
-        Fibonacchi fibonacchi = new Fibonacchi();
+        Fibonacci fibonacchi = new Fibonacci();
         //System.out.println(fibonacchi.fib(45));
         //System.out.println(fibonacchi.getNumber(100));
         //System.out.println(fibonacchi.getFibo(100));

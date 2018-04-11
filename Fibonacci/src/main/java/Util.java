@@ -10,25 +10,95 @@ import org.jfree.data.xy.DefaultXYDataset;
 import javax.swing.*;
 import java.util.*;
 
+
 public class Util {
+
+    private static final long kilobyte = 1024L;
+
     public static void main(String[] args) {
+
         //drawDiagram(coinSetups);
         //System.out.println(coinSetups);
         //drawDiagram(fill());
         //drawDiagram(create2DArray());
-        drawDiagram(createList(), "Add Array List");
-        drawDiagram(createLinkedList(), "Add Linked");
-        drawDiagram(createHashSet(), "Add Hash");
-        drawDiagram(linkedListContains(), "Linked Contains");
-        drawDiagram(arrayContains(), "Array Contains");
-        drawDiagram(removeHash(), "Remove Hashset");
-        drawDiagram(removeTree(), "Remove Tree");
-
+        //drawDiagram(createList(), "Add Array List");
+        //drawDiagram(createLinkedList(), "Add Linked");
+        //drawDiagram(createHashSet(), "Add Hash");
+        //drawDiagram(linkedListContains(), "Linked Contains");
+        //drawDiagram(arrayContains(), "Array Contains");
+        //drawDiagram(removeHash(), "Remove Hashset");
+        //drawDiagram(removeTree(), "Remove Tree");
+        //drawDiagram(linkedListContainsAvg(), "linkedAvg");
+        drawDiagram(createListMemory(), "ArrayList fill memory");
+        drawDiagram(createLinkedListMemory(), "LinkedList fill memory");
     }
         public static final double[][] coinSetups = new double[][]{
                 {2,2,5,10,6},
                 {2,3,7,22,4},
         };
+
+    public static double bytesToMegabytes(double bytes) {
+        return bytes / kilobyte;
+    }
+
+    public static double[][] createLinkedListMemory() {
+        double[] x = {1,10,100,1000,10000, 100000, 1000000};
+        double[] y = new double[7];
+        for (int i = 0; i < x.length; i++) {
+            LinkedList list = new LinkedList();
+            Runtime runtime = Runtime.getRuntime();
+            for (int j = 0; j < x[i]; j++) {
+                list.add(j);
+            }
+            double memory = runtime.totalMemory() - runtime.freeMemory();
+            runtime.gc();
+            y[i] = (bytesToMegabytes(memory));
+        }
+
+        return new double[][]{x, y};
+    }
+
+    public static double[][] createListMemory() {
+        double[] x = {1,10,100,1000,10000, 100000, 1000000};
+        double[] y = new double[7];
+        for (int i = 0; i < x.length; i++) {
+            ArrayList list = new ArrayList<Double>();
+            Runtime runtime = Runtime.getRuntime();
+            for (int j = 0; j < x[i]; j++) {
+                list.add(j);
+            }
+            double memory = runtime.totalMemory() - runtime.freeMemory();
+            runtime.gc();
+            y[i] = (bytesToMegabytes(memory));
+        }
+
+        return new double[][]{x, y};
+}
+
+
+    public static double[][] linkedListContainsAvg() {
+        double[] x = {1,10,100,1000,10000, 100000, 1000000};
+        double[] y = new double[7];
+        for (int i = 0; i < x.length; i++) {
+            LinkedList list = new LinkedList();
+            for (int j = 0; j < x[i]; j++) {
+                list.add(j+1);
+            }
+
+            double compare = (list.size()-1);
+            long time = 0;
+            int k = 0;
+            while (k <= 100) {
+            long startTime = System.nanoTime();
+            linkedListContains();
+            long endTime = System.nanoTime();
+            time += (endTime - startTime) / 1000000;
+            k++;
+            }
+            y[i] = (time / 1000000);
+        }
+        return new double[][]{x, y};
+    }
 
     public static double[][] removeTree() {
         double[] x = {1, 10, 100, 1000, 10000, 100000, 1000000};
@@ -285,7 +355,7 @@ public class Util {
             // Diagram elkeszitese
             DefaultXYDataset ds = new DefaultXYDataset();
             ds.addSeries(name, data);
-            JFreeChart chart = ChartFactory.createXYLineChart(name, "input size", "time", ds,
+            JFreeChart chart = ChartFactory.createXYLineChart(name, "input size", "memory", ds,
                     PlotOrientation.VERTICAL, true, true, false);
 
             LogarithmicAxis xAxis = new LogarithmicAxis("input size");

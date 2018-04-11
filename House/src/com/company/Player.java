@@ -4,6 +4,15 @@ public class Player {
     private int money;
     private Object furniture;
     private boolean insure = false;
+    private boolean debit = false;
+
+    public boolean isDebit() {
+        return debit;
+    }
+
+    public void setDebit(boolean debit) {
+        this.debit = debit;
+    }
 
     public boolean isInsure() {
         return insure;
