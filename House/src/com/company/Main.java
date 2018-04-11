@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Fields.Insurer;
 import com.company.Fields.Littering;
 import com.company.Fields.Lottery;
 
@@ -17,5 +18,8 @@ public class Main {
 
         Littering littering = new Littering();
         littering.litter();
+
+        Insurer insurer = new Insurer();
+        insurer.insure();
     }
 }
