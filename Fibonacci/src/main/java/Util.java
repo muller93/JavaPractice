@@ -31,6 +31,7 @@ public class Util {
         //drawDiagram(linkedListContainsAvg(), "linkedAvg");
         drawDiagram(createListMemory(), "ArrayList fill memory");
         drawDiagram(createLinkedListMemory(), "LinkedList fill memory");
+        drawDiagram(arrayFillMemory(), "array fill");
     }
         public static final double[][] coinSetups = new double[][]{
                 {2,2,5,10,6},
@@ -39,6 +40,22 @@ public class Util {
 
     public static double bytesToMegabytes(double bytes) {
         return bytes / kilobyte;
+    }
+    public static double[][] arrayFillMemory() {
+        double[] x = {1,10,100,1000,10000, 100000, 1000000};
+        double[] y = new double[7];
+        for (int i = 0; i < x.length; i++) {
+            double[] array = new double[(int) x[i]];
+            Runtime runtime = Runtime.getRuntime();
+            for (int j = 0; j < x[i]; j++) {
+                array[j] = j;
+            }
+            double memory = runtime.totalMemory() - runtime.freeMemory();
+            runtime.gc();
+            y[i] = (bytesToMegabytes(memory));
+
+        }
+        return new double[][]{x, y};
     }
 
     public static double[][] createLinkedListMemory() {
