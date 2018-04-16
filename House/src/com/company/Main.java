@@ -23,7 +23,7 @@ public class Main {
         ChimneySweeper chimneySweeper = new ChimneySweeper();
         chimneySweeper.chimneyLuck();
 
-        //ElectronikShop electronikShop = new ElectronikShop();
+        //ElectroShop electronikShop = new ElectroShop();
         //electronikShop.buyWashMach(); //hibakezelést kell csinálni még itt is és a biztosítónál is
     }
 }

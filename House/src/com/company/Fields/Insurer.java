@@ -2,7 +2,6 @@ package com.company.Fields;
 
 import com.company.Player;
 
-import java.lang.reflect.Method;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -26,8 +25,7 @@ public class Insurer {
                 } else if (s.equals("no")) {
                     System.out.println("Ok.");
                 }
-                }
-            else {
+            } else {
                 System.out.println("Sorry, I didn't catch that. Please answer yes/no");
             }
         }
