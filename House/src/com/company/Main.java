@@ -1,9 +1,6 @@
 package com.company;
 
-import com.company.Fields.ChimneySweeper;
-import com.company.Fields.Insurer;
-import com.company.Fields.Littering;
-import com.company.Fields.Lottery;
+import com.company.Fields.*;
 
 public class Main {
 
@@ -20,10 +17,13 @@ public class Main {
         Littering littering = new Littering();
         littering.litter(); // szemetelés miatt levon 200ft-ot
 
-        //Insurer insurer = new Insurer();
-        //insurer.insure(); //bíztosítás lekérdezése, ha nincs bekéri, hogy akarunk e kötni
+        Insurer insurer = new Insurer();
+        insurer.insure(); //bíztosítás lekérdezése, ha nincs bekéri, hogy akarunk e kötni. az
 
         ChimneySweeper chimneySweeper = new ChimneySweeper();
         chimneySweeper.chimneyLuck();
+
+        //ElectronikShop electronikShop = new ElectronikShop();
+        //electronikShop.buyWashMach(); //hibakezelést kell csinálni még itt is és a biztosítónál is
     }
 }
