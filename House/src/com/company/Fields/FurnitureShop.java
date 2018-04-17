@@ -15,31 +15,33 @@ public class FurnitureShop {
 
     public void buyArmchair(){ //meg kell oldani, hogy az elírásnál újra be lehessen írni
         if (!player.isArmchair()){
-            System.out.println("Do you want buy two armchairs? The price is " + armchairPrice*2 + "Ft. Please type yes/no");
-            Scanner sc;
-            sc = new Scanner(System.in);
-            String s;
-            s = sc.nextLine();
-            sc.close();
-            if (s.equals("yes")) {
-                System.out.println("Ok. You have two armchair from now.");
-                player.setArmchair(true);
-                player.setMoney(player.getMoney() - armchairPrice);
-            }
-            else if (s.equals("no")) {
-                System.out.println("Ok.");
-            }else {
-                System.out.println("Sorry, I didn't catch that. Please answer yes/no");
-                //buyWashMach();
-            }
-        } else {
+            if (player.getMoney() >= armchairPrice) {
+                System.out.println("Do you want buy two armchairs? The price is " + armchairPrice * 2 + "Ft. Please type yes/no");
+                Scanner sc;
+                sc = new Scanner(System.in);
+                String s;
+                s = sc.nextLine();
+                sc.close();
+                if (s.equals("yes")) {
+                    System.out.println("Ok. You have two armchair from now.");
+                    player.setArmchair(true);
+                    player.setMoney(player.getMoney() - armchairPrice);
+                } else if (s.equals("no")) {
+                    System.out.println("Ok.");
+                } else {
+                    System.out.println("Sorry, I didn't catch that. Please answer yes/no");
+                    //buyWashMach();
+                }
+            } else System.out.println("You don't have enough money.");
+    } else {
             System.out.println("You already have armchairs.");
         }
     }
 
     public void buyCouch() { //meg kell oldani, hogy az elírásnál újra be lehessen írni
         if (!player.isCouch()) {
-            System.out.println("Do you want buy a couch? The price is " + couchPrice + "Ft. Please type yes/no");
+            if (player.getMoney() >= couchPrice) {
+                System.out.println("Do you want buy a couch? The price is " + couchPrice + "Ft. Please type yes/no");
             Scanner sc;
             sc = new Scanner(System.in);
             String s;
@@ -55,12 +57,14 @@ public class FurnitureShop {
                 System.out.println("Sorry, I didn't catch that. Please answer yes/no");
                 //buyWashMach();
             }
+            } else System.out.println("You don't have enough money.");
         } else {
             System.out.println("You already have a couch.");
         }
     }
     public void buyKitchenFurniture() { //meg kell oldani, hogy az elírásnál újra be lehessen írni
         if (!player.isKitchenFurniture()) {
+            if (player.getMoney() >= kitchenFurnitrePrice) {
             System.out.println("Do you want buy a kitchen furniture? The price is " + kitchenFurnitrePrice + "Ft. Please type yes/no");
             Scanner sc;
             sc = new Scanner(System.in);
@@ -77,12 +81,14 @@ public class FurnitureShop {
                 System.out.println("Sorry, I didn't catch that. Please answer yes/no");
                 //buyWashMach();
             }
-        } else {
+        } else System.out.println("You don't have enough money.");
+    } else {
             System.out.println("You already have a kitchen furniture.");
         }
     }
     public void buyBed() { //meg kell oldani, hogy az elírásnál újra be lehessen írni
         if (!player.isBed()) {
+            if (player.getMoney() >= bedPrice) {
             System.out.println("Do you want buy a bed? The price is " + bedPrice + "Ft. Please type yes/no");
             Scanner sc;
             sc = new Scanner(System.in);
@@ -99,6 +105,7 @@ public class FurnitureShop {
                 System.out.println("Sorry, I didn't catch that. Please answer yes/no");
                 //buyWashMach();
             }
+            } else System.out.println("You don't have enough money.");
         } else {
             System.out.println("You already have a bed.");
         }

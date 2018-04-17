@@ -13,23 +13,24 @@ public class ElectroShop {
 
     public void buyWashMach(){ //meg kell oldani, hogy az elírásnál újra be lehessen írni
         if (!player.isWashingMachine()){
-            System.out.println("Do you want buy a wasching machine? The price is " + washMachPrice + "Ft. Please type yes/no");
-            Scanner sc;
-            sc = new Scanner(System.in);
-            String s;
-            s = sc.nextLine();
-            sc.close();
-            if (s.equals("yes")) {
-                System.out.println("Ok. You have a washing machine from now.");
-                player.setWashingMachine(true);
-                player.setMoney(player.getMoney() - washMachPrice);
-            }
-            else if (s.equals("no")) {
-                System.out.println("Ok.");
-            }else {
-                System.out.println("Sorry, I didn't catch that. Please answer yes/no");
-                //buyWashMach();
-            }
+            if (player.getMoney() >= washMachPrice) {
+                System.out.println("Do you want buy a wasching machine? The price is " + washMachPrice + "Ft. Please type yes/no");
+                Scanner sc;
+                sc = new Scanner(System.in);
+                String s;
+                s = sc.nextLine();
+                sc.close();
+                if (s.equals("yes")) {
+                    System.out.println("Ok. You have a washing machine from now.");
+                    player.setWashingMachine(true);
+                    player.setMoney(player.getMoney() - washMachPrice);
+                } else if (s.equals("no")) {
+                    System.out.println("Ok.");
+                } else {
+                    System.out.println("Sorry, I didn't catch that. Please answer yes/no");
+                    //buyWashMach();
+                }
+            }else System.out.println("You don't have enough money.");
         } else {
             System.out.println("You already have a washing machine.");
         }
@@ -37,7 +38,8 @@ public class ElectroShop {
 
     public void buyTv(){
         if (!player.isTv()){
-            System.out.println("Do you want buy a TV? The price is " + tvPrice + "Ft. Please type yes/no");
+            if (player.getMoney() >= tvPrice) {
+                System.out.println("Do you want buy a TV? The price is " + tvPrice + "Ft. Please type yes/no");
             Scanner sc;
             sc = new Scanner(System.in);
             String s;
@@ -54,6 +56,7 @@ public class ElectroShop {
                 System.out.println("Sorry, I didn't catch that. Please answer yes/no");
                 //buyWashMach();
             }
+            }else System.out.println("You don't have enough money.");
         } else {
             System.out.println("You already have a TV.");
         }
@@ -61,23 +64,24 @@ public class ElectroShop {
 
     public void buyHoover(){
         if (!player.isHoover()){
-            System.out.println("Do you want buy a hoover? The price is " + hooverPrice + "Ft. Please type yes/no");
-            Scanner sc;
-            sc = new Scanner(System.in);
-            String s;
-            s = sc.nextLine();
-            sc.close();
-            if (s.equals("yes")) {
-                System.out.println("Ok. You have a hoover from now.");
-                player.setHoover(true);
-                player.setMoney(player.getMoney() - hooverPrice);
-            }
-            else if (s.equals("no")) {
-                System.out.println("Ok.");
-            }else {
-                System.out.println("Sorry, I didn't catch that. Please answer yes/no");
-                //buyWashMach();
-            }
+            if (player.getMoney() >= hooverPrice) {
+                System.out.println("Do you want buy a hoover? The price is " + hooverPrice + "Ft. Please type yes/no");
+                Scanner sc;
+                sc = new Scanner(System.in);
+                String s;
+                s = sc.nextLine();
+                sc.close();
+                if (s.equals("yes")) {
+                    System.out.println("Ok. You have a hoover from now.");
+                    player.setHoover(true);
+                    player.setMoney(player.getMoney() - hooverPrice);
+                } else if (s.equals("no")) {
+                    System.out.println("Ok.");
+                } else {
+                    System.out.println("Sorry, I didn't catch that. Please answer yes/no");
+                    //buyWashMach();
+                }
+            } else System.out.println("You don't have enough money.");
         } else {
             System.out.println("You already have a hoover.");
         }
@@ -85,7 +89,8 @@ public class ElectroShop {
 
     public void buyRadio(){
     if (!player.isRadio()){
-        System.out.println("Do you want buy a radio? The price is " + radioPrice + "Ft. Please type yes/no");
+        if (player.getMoney() >= radioPrice) {
+            System.out.println("Do you want buy a radio? The price is " + radioPrice + "Ft. Please type yes/no");
         Scanner sc;
         sc = new Scanner(System.in);
         String s;
@@ -102,6 +107,7 @@ public class ElectroShop {
             System.out.println("Sorry, I didn't catch that. Please answer yes/no");
             //buyWashMach();
         }
+        } else System.out.println("You don't have enough money.");
     } else {
         System.out.println("You already have a radio.");
         }

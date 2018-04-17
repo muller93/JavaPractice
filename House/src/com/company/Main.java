@@ -17,8 +17,8 @@ public class Main {
         Littering littering = new Littering();
         littering.litter(); // szemetelés miatt levon 200ft-ot
 
-        Insurer insurer = new Insurer();
-        insurer.insure(); //bíztosítás lekérdezése, ha nincs bekéri, hogy akarunk e kötni. az
+        //Insurer insurer = new Insurer();
+        //insurer.insure(); //bíztosítás lekérdezése, ha nincs bekéri, hogy akarunk e kötni. az
 
         ChimneySweeper chimneySweeper = new ChimneySweeper();
         chimneySweeper.chimneyLuck();
@@ -28,5 +28,8 @@ public class Main {
 
         TvBurn tvBurn = new TvBurn();
         tvBurn.tvBurn(); //leég a tv. ha biztosító visszakapja az árát. kész
+
+        FurnitureShop furnitureShop = new FurnitureShop();
+        furnitureShop.buyArmchair();
     }
 }
