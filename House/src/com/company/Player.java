@@ -3,6 +3,7 @@ package com.company;
 public class Player {
     private int money;
     private Object furniture;
+    private boolean house = false;
     private boolean insure = false;
     private boolean debit = false;
     private boolean armchair = false;
@@ -13,6 +14,14 @@ public class Player {
     private boolean bed = false;
     private boolean washingMachine = false;
     private boolean radio = false;
+
+    public boolean isHouse() {
+        return house;
+    }
+
+    public void setHouse(boolean house) {
+        this.house = house;
+    }
 
     public boolean isDebit() {
         return debit;
