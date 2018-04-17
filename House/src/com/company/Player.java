@@ -5,7 +5,7 @@ public class Player {
     private Object furniture;
     private boolean insure = false;
     private boolean debit = false;
-    private boolean armhair = false;
+    private boolean armchair = false;
     private boolean couch = false;
     private boolean kitchenFurniture = false;
     private boolean hoover = false;
@@ -18,12 +18,12 @@ public class Player {
         return debit;
     }
 
-    public boolean isArmhair() {
-        return armhair;
+    public boolean isArmchair() {
+        return armchair;
     }
 
-    public void setArmhair(boolean armhair) {
-        this.armhair = armhair;
+    public void setArmchair(boolean armchair) {
+        this.armchair = armchair;
     }
 
     public boolean isCouch() {
