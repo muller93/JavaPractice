@@ -106,4 +106,44 @@ public class ElectroShop {
         System.out.println("You already have a radio.");
         }
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public int getWashMachPrice() {
+        return washMachPrice;
+    }
+
+    public void setWashMachPrice(int washMachPrice) {
+        this.washMachPrice = washMachPrice;
+    }
+
+    public int getTvPrice() {
+        return tvPrice;
+    }
+
+    public void setTvPrice(int tvPrice) {
+        this.tvPrice = tvPrice;
+    }
+
+    public int getHooverPrice() {
+        return hooverPrice;
+    }
+
+    public void setHooverPrice(int hooverPrice) {
+        this.hooverPrice = hooverPrice;
+    }
+
+    public int getRadioPrice() {
+        return radioPrice;
+    }
+
+    public void setRadioPrice(int radioPrice) {
+        this.radioPrice = radioPrice;
+    }
 }

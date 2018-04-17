@@ -25,5 +25,8 @@ public class Main {
 
         //ElectroShop electronikShop = new ElectroShop();
         //electronikShop.buyWashMach(); //hibakezelést kell csinálni még itt is és a biztosítónál is
+
+        TvBurn tvBurn = new TvBurn();
+        tvBurn.tvBurn(); //leég a tv. ha biztosító visszakapja az árát. kész
     }
 }
