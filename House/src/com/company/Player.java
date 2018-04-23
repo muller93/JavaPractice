@@ -1,7 +1,7 @@
 package com.company;
 
 public class Player {
-    private int money;
+    private int money = 10000;
     private Object furniture;
     private boolean house = false;
     private boolean insure = false;

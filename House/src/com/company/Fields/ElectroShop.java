@@ -11,107 +11,84 @@ public class ElectroShop {
     private int hooverPrice = 3000;
     private int radioPrice = 500;
 
-    public void buyWashMach(){ //meg kell oldani, hogy az elírásnál újra be lehessen írni
-        if (!player.isWashingMachine()){
-            if (player.getMoney() >= washMachPrice) {
-                System.out.println("Do you want buy a wasching machine? The price is " + washMachPrice + "Ft. Please type yes/no");
-                Scanner sc;
-                sc = new Scanner(System.in);
-                String s;
-                s = sc.nextLine();
-                sc.close();
-                if (s.equals("yes")) {
-                    System.out.println("Ok. You have a washing machine from now.");
-                    player.setWashingMachine(true);
-                    player.setMoney(player.getMoney() - washMachPrice);
-                } else if (s.equals("no")) {
-                    System.out.println("Ok.");
-                } else {
-                    System.out.println("Sorry, I didn't catch that. Please answer yes/no");
-                    //buyWashMach();
-                }
-            }else System.out.println("You don't have enough money.");
-        } else {
-            System.out.println("You already have a washing machine.");
-        }
-    }
+    public void electroShop() throws Exception {
+        System.out.println("Do you want buy any electonic device? Please enter a number.");
+        System.out.println("1. Washing machine. Price: " + washMachPrice);
+        System.out.println("2. TV. Price: " + tvPrice);
+        System.out.println("3. Hoover. Price: " + hooverPrice);
+        System.out.println("4. Radio. Price: " + radioPrice);
+        System.out.println("5. No, thanks.");
+        try {
 
-    public void buyTv(){
-        if (!player.isTv()){
-            if (player.getMoney() >= tvPrice) {
-                System.out.println("Do you want buy a TV? The price is " + tvPrice + "Ft. Please type yes/no");
-            Scanner sc;
-            sc = new Scanner(System.in);
-            String s;
-            s = sc.nextLine();
+            Scanner sc = new Scanner(System.in);
+            int s;
+            s = sc.nextInt();
             sc.close();
-            if (s.equals("yes")) {
-                System.out.println("Ok. You have a TV from now.");
-                player.setTv(true);
-                player.setMoney(player.getMoney() - tvPrice);
-            }
-            else if (s.equals("no")) {
-                System.out.println("Ok.");
-            }else {
-                System.out.println("Sorry, I didn't catch that. Please answer yes/no");
-                //buyWashMach();
-            }
-            }else System.out.println("You don't have enough money.");
-        } else {
-            System.out.println("You already have a TV.");
-        }
-    }
-
-    public void buyHoover(){
-        if (!player.isHoover()){
-            if (player.getMoney() >= hooverPrice) {
-                System.out.println("Do you want buy a hoover? The price is " + hooverPrice + "Ft. Please type yes/no");
-                Scanner sc;
-                sc = new Scanner(System.in);
-                String s;
-                s = sc.nextLine();
-                sc.close();
-                if (s.equals("yes")) {
-                    System.out.println("Ok. You have a hoover from now.");
-                    player.setHoover(true);
-                    player.setMoney(player.getMoney() - hooverPrice);
-                } else if (s.equals("no")) {
-                    System.out.println("Ok.");
-                } else {
-                    System.out.println("Sorry, I didn't catch that. Please answer yes/no");
-                    //buyWashMach();
+            if (s > 0 && s < 6) {
+            switch (s) {
+                    case 1:
+                        if (player.getMoney() >= washMachPrice) {
+                            if (!player.isWashingMachine()) {
+                                player.setWashingMachine(true);
+                                player.setMoney(player.getMoney() - washMachPrice);
+                                System.out.println("You bought a new washing machine. Your money: " + player.getMoney());
+                            } else {
+                                System.out.println("You already have a washing machine.");
+                            }
+                        } else {
+                            System.out.println("You don't have enough money.");
+                        }
+                        break;
+                    case 2:
+                        if (player.getMoney() >= tvPrice) {
+                            if (!player.isTv()) {
+                                player.setTv(true);
+                                player.setMoney(player.getMoney() - tvPrice);
+                                System.out.println("You bought a new TV. Your money: " + player.getMoney());
+                            } else {
+                                System.out.println("You already have a TV.");
+                            }
+                        } else {
+                            System.out.println("You don't have enough money.");
+                        }
+                        break;
+                    case 3:
+                        if (player.getMoney() >= hooverPrice) {
+                            if (!player.isHoover()) {
+                                player.setHoover(true);
+                                player.setMoney(player.getMoney() - hooverPrice);
+                                System.out.println("You bought a new hoover. Your money: " + player.getMoney());
+                            } else {
+                                System.out.println("You already have a hoover.");
+                            }
+                        } else {
+                            System.out.println("You don't have enough money.");
+                        }
+                        break;
+                    case 4:
+                        if (player.getMoney() >= radioPrice) {
+                            if (!player.isRadio()) {
+                                player.setRadio(true);
+                                player.setMoney(player.getMoney() - radioPrice);
+                                System.out.println("You bought a new radio. Your money: " + player.getMoney());
+                            } else {
+                                System.out.println("You already have a radio.");
+                            }
+                        } else {
+                            System.out.println("You don't have enough money.");
+                        }
+                        break;
+                    case 5:
+                        System.out.println("Ok.");
+                        break;
                 }
-            } else System.out.println("You don't have enough money.");
-        } else {
-            System.out.println("You already have a hoover.");
+            } else
+                System.out.println("Please give a number between 1-5.");
+        } catch (Exception ex){
+            System.out.println("Wront input. Please give a number between 1-5.");
         }
     }
 
-    public void buyRadio(){
-    if (!player.isRadio()){
-        if (player.getMoney() >= radioPrice) {
-            System.out.println("Do you want buy a radio? The price is " + radioPrice + "Ft. Please type yes/no");
-        Scanner sc;
-        sc = new Scanner(System.in);
-        String s;
-        s = sc.nextLine();
-        sc.close();
-        if (s.equals("yes")) {
-            System.out.println("Ok. You have a radio from now.");
-            player.setRadio(true);
-            player.setMoney(player.getMoney() - radioPrice);
-        }
-        else if (s.equals("no")) {
-            System.out.println("Ok.");
-        }else {
-            System.out.println("Sorry, I didn't catch that. Please answer yes/no");
-            //buyWashMach();
-        }
-        } else System.out.println("You don't have enough money.");
-    } else {
-        System.out.println("You already have a radio.");
-        }
-    }
 
     public Player getPlayer() {
         return player;
