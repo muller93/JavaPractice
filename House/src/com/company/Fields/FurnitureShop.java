@@ -1,7 +1,8 @@
 package com.company.Fields;
 
-import com.company.Player;
+import com.company.Player.Player;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FurnitureShop {
@@ -14,29 +15,31 @@ public class FurnitureShop {
     private boolean furnitureError;
 
     public void furnitureShop() throws Exception {
-        System.out.println("Do you want buy any furniture? Please enter a number.");
-        System.out.println("1. Armchair. Price: " + armchairPrice);
-        System.out.println("2. Couch. Price: " + couchPrice);
-        System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice);
-        System.out.println("4. Bed. Price: " + bedPrice);
-        System.out.println("5. No, thanks.");
+            System.out.println("Do you want buy any furniture? Please enter a number.");
+            System.out.println("1. Armchair. Price: " + armchairPrice);
+            System.out.println("2. Couch. Price: " + couchPrice);
+            System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice);
+            System.out.println("4. Bed. Price: " + bedPrice);
+            System.out.println("5. No, thanks.");
 
-        do {
-            try {
-                Scanner sc = new Scanner(System.in);
-                int scan;
-                scan = sc.nextInt();
-                sc.close();
-                if (scan > 0 && scan < 6) {
-                    sw(scan);
-                } else
-                    System.out.println("Please give a number between 1-5.");
-                furnitureError = false;
-            } catch (Exception ex) {
-                furnitureError = true;
-                System.out.println("Wrong input. Please give a number between 1-5.");
-            }
-        } while (furnitureError);
+            do {
+                try {
+                    Scanner sc = new Scanner(System.in);
+                    int scan;
+                    scan = sc.nextInt();
+                    sc.close();
+                    if (scan > 0 && scan < 6) {
+                        sw(scan);
+                        furnitureError = true;
+                    } else {
+                        System.out.println("Please give a number between 1-5.");
+                        sc.nextLine();
+                    }
+                } catch (Exception ex) {
+                    System.out.println("Wrong input. Please give a number between 1-5.");
+                    furnitureError = true;
+                }
+            } while (furnitureError);
     }
 
     public void sw(int scan){

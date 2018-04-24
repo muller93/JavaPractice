@@ -1,6 +1,6 @@
 package com.company.Fields;
 
-import com.company.Player;
+import com.company.Player.Player;
 
 public class TvBurn {
     Player player = new Player();

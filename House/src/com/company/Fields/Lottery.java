@@ -1,7 +1,7 @@
 package com.company.Fields;
 
-import com.company.LuckyCard;
-import com.company.Player;
+import com.company.Devices.LuckyCard;
+import com.company.Player.Player;
 
 public class Lottery {
     Player player = new Player();

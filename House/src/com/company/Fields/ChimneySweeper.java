@@ -1,6 +1,6 @@
 package com.company.Fields;
 
-import com.company.LuckyCard;
+import com.company.Devices.LuckyCard;
 
 public class ChimneySweeper {
     LuckyCard luckyCard = new LuckyCard();

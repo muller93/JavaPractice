@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Player;
 
 public class Player {
     private int money = 10000;
@@ -16,7 +16,7 @@ public class Player {
     private boolean radio = false;
 
     private boolean debit = false;
-    private int howManyDebit = 0;
+    private int howManyDebit = 5000;
 
     public boolean isHouse() {
         return house;

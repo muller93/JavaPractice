@@ -1,6 +1,6 @@
 package com.company.Fields;
 
-import com.company.Player;
+import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

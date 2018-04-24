@@ -1,11 +1,16 @@
 package com.company;
 
+import com.company.Devices.Dice;
 import com.company.Fields.*;
+import com.company.Player.Player;
+
+import javax.swing.text.PlainDocument;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-	    Trash trash = new Trash();
+        Player player = new Player();
+	    Dice trash = new Dice();
         System.out.println(trash.dice()); // dice ok
 
         //LuckyCard luckyCard = new LuckyCard();
@@ -33,6 +38,6 @@ public class Main {
         //furnitureShop.furnitureShop(); // ha egymás után hívom meg a két bolt várálását, végtelen ciklusba fut
 
         Bank bank = new Bank();
-        bank.takeUpLoan();
+        bank.takeUpLoan(); // mezőre való visszatérés itt is
     }
 }

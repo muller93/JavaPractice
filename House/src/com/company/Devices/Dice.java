@@ -1,8 +1,8 @@
-package com.company;
+package com.company.Devices;
 
 import java.util.Random;
 
-public class Trash {
+public class Dice {
     Random rand = new Random();
 
     public int dice(){

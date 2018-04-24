@@ -1,6 +1,6 @@
 package com.company.Fields;
 
-import com.company.Player;
+import com.company.Player.Player;
 
 public class Littering {
     Player player = new Player();

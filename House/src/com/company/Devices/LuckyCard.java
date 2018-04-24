@@ -1,4 +1,6 @@
-package com.company;
+package com.company.Devices;
+
+import com.company.Player.Player;
 
 import java.util.*;
 
