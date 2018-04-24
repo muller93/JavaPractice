@@ -5,7 +5,7 @@ public class Player {
     private Object furniture;
     private boolean house = false;
     private boolean insure = false;
-    private boolean debit = false;
+
     private boolean armchair = false;
     private boolean couch = false;
     private boolean kitchenFurniture = false;
@@ -14,6 +14,9 @@ public class Player {
     private boolean bed = false;
     private boolean washingMachine = false;
     private boolean radio = false;
+
+    private boolean debit = false;
+    private int howManyDebit = 0;
 
     public boolean isHouse() {
         return house;
@@ -117,6 +120,14 @@ public class Player {
 
     public void setFurniture(Object furniture) {
         this.furniture = furniture;
+    }
+
+    public int getHowManyDebit() {
+        return howManyDebit;
+    }
+
+    public void setHowManyDebit(int howManyDebit) {
+        this.howManyDebit = howManyDebit;
     }
 
     @Override
