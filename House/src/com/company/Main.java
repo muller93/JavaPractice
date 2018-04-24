@@ -24,7 +24,7 @@ public class Main {
         //chimneySweeper.chimneyLuck();
 
         ElectroShop electronikShop = new ElectroShop();
-        electronikShop.electroShop(); //hibakezelést kell csinálni még itt is és a biztosítónál is
+        electronikShop.electroShop(); //ready
 
         //TvBurn tvBurn = new TvBurn();
         //tvBurn.tvBurn(); //leég a tv. ha biztosító visszakapja az árát. kész
