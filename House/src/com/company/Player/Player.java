@@ -1,7 +1,7 @@
 package com.company.Player;
 
 public class Player {
-    private int money = 10000;
+    private int money = 50000;
     private Object furniture;
     private boolean house = false;
     private boolean insure = false;
@@ -10,7 +10,7 @@ public class Player {
     private boolean couch = false;
     private boolean kitchenFurniture = false;
     private boolean hoover = false;
-    private boolean tv = false;
+    private boolean tv = true;
     private boolean bed = false;
     private boolean washingMachine = false;
     private boolean radio = false;

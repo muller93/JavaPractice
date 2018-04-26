@@ -23,13 +23,13 @@ public class Main {
         //littering.litter(); // szemetelés miatt levon 200ft-ot
 
         //Insurer insurer = new Insurer();
-        //insurer.insure(); //bíztosítás lekérdezése, ha nincs bekéri, hogy akarunk e kötni. az
+        //insurer.getInsure(); //bíztosítás lekérdezése, ha nincs bekéri, hogy akarunk e kötni. ok
 
         //ChimneySweeper chimneySweeper = new ChimneySweeper();
         //chimneySweeper.chimneyLuck();
 
-        ElectroShop electronikShop = new ElectroShop();
-        electronikShop.electroShop(); //más számok esetén nem kér új számot
+        //ElectroShop electronikShop = new ElectroShop();
+        //electronikShop.electroShop(); //ok
 
         //TvBurn tvBurn = new TvBurn();
         //tvBurn.tvBurn(); //leég a tv. ha biztosító visszakapja az árát. kész
@@ -39,5 +39,8 @@ public class Main {
 
         //Bank bank = new Bank();
         //bank.takeUpLoan(); // mezőre való visszatérés itt is
+
+        RealEstate realEstate = new RealEstate();
+        realEstate.getHouse();
     }
 }

@@ -8,7 +8,7 @@ public class TvBurn {
 
     public void tvBurn(){
         if (player.isTv()){
-            if (player.isDebit()) {
+            if (player.isInsure()) {
                 System.out.println("Your tv is burned, but you have insure, so you got back the money.");
                 player.setTv(false);
                 player.setMoney(player.getMoney() + electroShop.getTvPrice());
