@@ -28,16 +28,16 @@ public class Main {
         //ChimneySweeper chimneySweeper = new ChimneySweeper();
         //chimneySweeper.chimneyLuck();
 
-        //ElectroShop electronikShop = new ElectroShop();
-        //electronikShop.electroShop(); //más számok esetén nem kér új számot
+        ElectroShop electronikShop = new ElectroShop();
+        electronikShop.electroShop(); //más számok esetén nem kér új számot
 
         //TvBurn tvBurn = new TvBurn();
         //tvBurn.tvBurn(); //leég a tv. ha biztosító visszakapja az árát. kész
 
         //FurnitureShop furnitureShop = new FurnitureShop();
-        //furnitureShop.furnitureShop(); // ha egymás után hívom meg a két bolt várálását, végtelen ciklusba fut
+        //furnitureShop.furnitureShop(); // okéjó
 
-        Bank bank = new Bank();
-        bank.takeUpLoan(); // mezőre való visszatérés itt is
+        //Bank bank = new Bank();
+        //bank.takeUpLoan(); // mezőre való visszatérés itt is
     }
 }

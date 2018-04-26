@@ -3,6 +3,7 @@ package com.company.Fields;
 import com.company.Player.Player;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FurnitureShop {
@@ -12,7 +13,8 @@ public class FurnitureShop {
     private int couchPrice = 5000; //kanapé
     private int kitchenFurnitrePrice = 6000;
     private int bedPrice = 4000;
-    private boolean furnitureError;
+    private boolean furnitureError = false;
+
 
     public void furnitureShop() throws Exception {
             System.out.println("Do you want buy any furniture? Please enter a number.");
@@ -21,25 +23,27 @@ public class FurnitureShop {
             System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice);
             System.out.println("4. Bed. Price: " + bedPrice);
             System.out.println("5. No, thanks.");
-
-            do {
+            int scan = 33;
+        Scanner sc = null;
+        do {
                 try {
-                    Scanner sc = new Scanner(System.in);
-                    int scan;
+                    sc = new Scanner(System.in);
                     scan = sc.nextInt();
-                    sc.close();
-                    if (scan > 0 && scan < 6) {
-                        sw(scan);
+                    if (!(scan < 1 && scan > 5)) {
+                        System.out.println("Wrong input. Please give a number between 1-5.");
                         furnitureError = true;
-                    } else {
-                        System.out.println("Please give a number between 1-5.");
-                        sc.nextLine();
                     }
-                } catch (Exception ex) {
+                    sw(scan);
+                } catch (InputMismatchException ex) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     furnitureError = true;
+                } catch (Exception e){
+                    e.printStackTrace();
+                    System.exit(1);
                 }
-            } while (furnitureError);
+
+                } while (furnitureError);
+        sc.close();
     }
 
     public void sw(int scan){

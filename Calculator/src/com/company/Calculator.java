@@ -1,8 +1,12 @@
 package com.company;
 
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.InputMethodListener;
 
 public class Calculator {
     private JButton button1;
@@ -32,7 +36,28 @@ public class Calculator {
                 JOptionPane.showMessageDialog(null, "oké");
             }
         });
+
+        a1Button.addInputMethodListener(new InputMethodListener() {
+            @Override
+            public void inputMethodTextChanged(InputMethodEvent inputMethodEvent) {
+
+            }
+
+            @Override
+            public void caretPositionChanged(InputMethodEvent inputMethodEvent) {
+
+            }
+        });
+        a2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
     }
+
+
+
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculator");
@@ -41,4 +66,9 @@ public class Calculator {
         frame.pack();
         frame.setVisible(true);
     }
+
+    public void butFunc(){
+        System.out.println("probe");
+    }
+
 }

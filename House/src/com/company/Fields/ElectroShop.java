@@ -2,6 +2,7 @@ package com.company.Fields;
 
 import com.company.Player.Player;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ElectroShop {
@@ -20,21 +21,26 @@ public class ElectroShop {
         System.out.println("3. Hoover. Price: " + hooverPrice);
         System.out.println("4. Radio. Price: " + radioPrice);
         System.out.println("5. No, thanks.");
-
+        Scanner sc = null;
         do {
             try {
-                Scanner sc = new Scanner(System.in);
+                sc = new Scanner(System.in);
                 int scan;
                 scan = sc.nextInt();
-                sc.close();
-                if (scan > 0 && scan < 6) {
-                    sw(scan);
+                if (!(scan < 1 && scan > 5)) {
+                    System.out.println("Wrong input. Please give a number between 1-5.");
+                    electroErr = true;
                 }
+                sw(scan);
+            }
+            catch (InputMismatchException ex) {
+                System.out.println("Wrong input. Please give a number between 1-5.");
+                electroErr = true;
             }catch(Exception ex){
                 electroErr = true;
-                System.out.println("Wrong input. Please give a number between 1-5.");
             }
         } while (electroErr);
+        sc.close();
     }
 
     public void sw(int scan) {
