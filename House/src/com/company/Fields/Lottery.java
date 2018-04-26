@@ -3,7 +3,7 @@ package com.company.Fields;
 import com.company.Devices.LuckyCard;
 import com.company.Player.Player;
 
-public class Lottery {
+public class Lottery { //ready
     Player player = new Player();
     LuckyCard luckyCard = new LuckyCard();
 

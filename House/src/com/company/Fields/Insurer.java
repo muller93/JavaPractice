@@ -10,7 +10,7 @@ public class Insurer {
     private int insurePrice = 1000;
     private boolean insureError;
 
-    public void getInsure() throws Exception {
+    public void getInsure() throws Exception { //ready
         if (player.isInsure()) {
             System.out.println("You already have insure.");
         } else if (player.getMoney() < insurePrice) {

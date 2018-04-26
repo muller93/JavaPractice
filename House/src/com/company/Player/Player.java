@@ -2,7 +2,6 @@ package com.company.Player;
 
 public class Player {
     private int money = 50000;
-    private Object furniture;
     private boolean house = false;
     private boolean insure = false;
 
@@ -114,14 +113,6 @@ public class Player {
         this.money = money;
     }
 
-    public Object getFurniture() {
-        return furniture;
-    }
-
-    public void setFurniture(Object furniture) {
-        this.furniture = furniture;
-    }
-
     public int getHowManyDebit() {
         return howManyDebit;
     }
@@ -130,9 +121,4 @@ public class Player {
         this.howManyDebit = howManyDebit;
     }
 
-    @Override
-    public String toString() {
-        return "Your money: " + money +
-                "\n Your furnitures: " + furniture;
-    }
 }

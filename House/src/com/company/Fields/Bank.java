@@ -2,16 +2,17 @@ package com.company.Fields;
 
 import com.company.Player.Player;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Bank {
     Player player = new Player();
-    private boolean bankError = false;
+    private boolean bankError;
     private int maxLoan = 15000;
     private int canLoan = maxLoan - player.getHowManyDebit();
     private int scan;
 
-    public void takeUpLoan(){
+    public void takeUpLoan(){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
         System.out.println("Your currently debit is " + player.getHowManyDebit() + "You can take up " + canLoan);
         System.out.println("Welcome to our bank. What do you want? Please select a number.");
         System.out.println("1. I want take up 5000");
@@ -19,19 +20,28 @@ public class Bank {
         System.out.println("3. I want take up 15000");
         System.out.println("4. I want pay back the money.");
         System.out.println("5. Nothing");
-        bankError = false;
+        int scan = 0;
+        Scanner sc = null;
+
         do {
             try {
-                Scanner sc = new Scanner(System.in);
-                int scan;
+                sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                sc.close();
+                if (!(scan < 1 && scan > 5)) {
+                    System.out.println("Wrong input. Please give a number between 1-5.");
+                    bankError = true;
+                }
                 sw(scan);
-            }catch(Exception ex){
+            } catch (InputMismatchException ex) {
+                System.out.println("Wrong input. Please give a number between 1-5.");
                 bankError = true;
-                System.out.println("Wrong input. Please give a number between 1-6.");
+            } catch (Exception e){
+                e.printStackTrace();
+                System.exit(1);
             }
+
         } while (bankError);
+        sc.close();
     }
 
     public void sw(int scan) {

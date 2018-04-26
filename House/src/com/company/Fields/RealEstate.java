@@ -5,7 +5,7 @@ import com.company.Player.Player;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RealEstate {
+public class RealEstate { //ready
     Player player = new Player();
     private int housePrice = 50000;
     private boolean houseError;

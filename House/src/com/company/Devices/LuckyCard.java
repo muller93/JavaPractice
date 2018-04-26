@@ -4,7 +4,7 @@ import com.company.Player.Player;
 
 import java.util.*;
 
-public class LuckyCard {
+public class LuckyCard { //ok
     private String message;
     private int value;
 

@@ -2,7 +2,7 @@ package com.company.Fields;
 
 import com.company.Player.Player;
 
-public class Littering {
+public class Littering { //ready
     Player player = new Player();
     public void litter(){
         player.setMoney(player.getMoney()- 200);

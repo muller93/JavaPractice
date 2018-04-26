@@ -5,7 +5,7 @@ import com.company.Devices.LuckyCard;
 public class ChimneySweeper {
     LuckyCard luckyCard = new LuckyCard();
 
-    public void chimneyLuck(){
+    public void chimneyLuck(){ //ready
         System.out.println("You saw a chimney sweeper! Pull a luckycard.");
         luckyCard.luckyCards();
     }

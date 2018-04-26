@@ -16,14 +16,14 @@ public class FurnitureShop {
     private boolean furnitureError = false;
 
 
-    public void furnitureShop() throws Exception {
+    public void furnitureShop() throws Exception { //ready
             System.out.println("Do you want buy any furniture? Please enter a number.");
             System.out.println("1. Armchair. Price: " + armchairPrice);
             System.out.println("2. Couch. Price: " + couchPrice);
             System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice);
             System.out.println("4. Bed. Price: " + bedPrice);
             System.out.println("5. No, thanks.");
-            int scan = 33;
+            int scan = 0;
         Scanner sc = null;
         do {
                 try {

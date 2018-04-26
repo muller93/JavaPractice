@@ -2,7 +2,7 @@ package com.company.Fields;
 
 import com.company.Player.Player;
 
-public class TvBurn {
+public class TvBurn { //ready
     Player player = new Player();
     ElectroShop electroShop = new ElectroShop();
 

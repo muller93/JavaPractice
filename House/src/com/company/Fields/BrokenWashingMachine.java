@@ -2,14 +2,15 @@ package com.company.Fields;
 
 import com.company.Player.Player;
 
-public class BrokenWashingMachine {
+public class BrokenWashingMachine { //ready
     Player player = new Player();
+    ElectroShop electroShop = new ElectroShop();
 
     public void washMach(){
         if (player.isWashingMachine()){
             if (player.isInsure()){
                 System.out.println("Your washing machine is ruined, but you have insure. You get back the money.");
-                // vissza kell kapnia az árát
+                player.setMoney(player.getMoney() - electroShop.getWashMachPrice());
                 player.setWashingMachine(false);
             } else {
                 System.out.println("Your washing machine is ruined, so you have to buy a new. You don't have insure.");

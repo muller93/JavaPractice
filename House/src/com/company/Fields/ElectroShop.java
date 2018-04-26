@@ -14,7 +14,7 @@ public class ElectroShop {
     private boolean electroErr = false;
     private int scan;
 
-    public void electroShop() throws Exception {
+    public void electroShop() throws Exception { //ready
         System.out.println("Do you want buy any electonic device? Please enter a number.");
         System.out.println("1. Washing machine. Price: " + washMachPrice);
         System.out.println("2. TV. Price: " + tvPrice);
