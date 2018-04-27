@@ -1,11 +1,13 @@
 package com.company.Fields;
 
+import com.company.Board.Board;
+import com.company.Board.Square;
 import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ElectroShop {
+public class ElectroShop  extends Square{
     Player player = new Player();
     private int washMachPrice = 6000;
     private int tvPrice = 8000;
@@ -13,6 +15,10 @@ public class ElectroShop {
     private int radioPrice = 500;
     private boolean electroErr = false;
     private int scan;
+
+    public ElectroShop(String name) {
+        super(name);
+    }
 
     public void electroShop() throws Exception { //ready
         System.out.println("Do you want buy any electonic device? Please enter a number.");
@@ -142,5 +148,10 @@ public class ElectroShop {
 
     public void setRadioPrice(int radioPrice) {
         this.radioPrice = radioPrice;
+    }
+
+    @Override
+    public void doAction(Player player, Board board) {
+
     }
 }

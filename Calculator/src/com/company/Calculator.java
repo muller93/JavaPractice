@@ -17,6 +17,8 @@ public class Calculator {
     private JButton button6;
     private JButton button7;
     private JButton xButton;
+
+    // nums
     private JButton a0Button;
     private JButton button10;
     private JButton a7Button;
@@ -28,47 +30,17 @@ public class Calculator {
     private JButton a3Button;
     private JButton a2Button;
     private JButton a1Button;
-
-    public Calculator() {
-        a0Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                JOptionPane.showMessageDialog(null, "oké");
-            }
-        });
-
-        a1Button.addInputMethodListener(new InputMethodListener() {
-            @Override
-            public void inputMethodTextChanged(InputMethodEvent inputMethodEvent) {
-
-            }
-
-            @Override
-            public void caretPositionChanged(InputMethodEvent inputMethodEvent) {
-
-            }
-        });
-        a2Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-            }
-        });
-    }
-
-
-
-
+Main main = new Main();
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculator");
-        frame.setContentPane(new Calculator().a0Button);
+        /*frame.setContentPane(new Calculator().a0Button);*/
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
 
     public void butFunc(){
-        System.out.println("probe");
+        //a0Button.addActionListener(new Exit());
     }
 
 }

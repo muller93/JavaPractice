@@ -5,6 +5,12 @@ public class Player {
     private boolean house = false;
     private boolean insure = false;
 
+    private int totalWalk = 0;
+    private int position = 0;
+    private int id;
+    private boolean brokeOut = false;
+    private String name;
+
     private boolean armchair = false;
     private boolean couch = false;
     private boolean kitchenFurniture = false;
@@ -17,6 +23,19 @@ public class Player {
     private boolean debit = false;
     private int howManyDebit = 5000;
 
+    public Player(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
     public boolean isHouse() {
         return house;
     }
@@ -25,8 +44,57 @@ public class Player {
         this.house = house;
     }
 
-    public boolean isDebit() {
-        return debit;
+    public boolean isInsure() {
+        return insure;
+    }
+
+    public void setInsure(boolean insure) {
+        this.insure = insure;
+    }
+
+    public int getTotalWalk() {
+        return totalWalk;
+    }
+
+    public int nextTurn() {
+        return totalWalk++;
+    }
+
+
+    public void setTotalWalk(int totalWalk) {
+        this.totalWalk = totalWalk;
+    }
+
+    public int getCurrentPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isBrokeOut() {
+        return brokeOut;
+    }
+
+    public void setBrokeOut(boolean brokeout) {
+        this.brokeOut = brokeout;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isArmchair() {
@@ -93,24 +161,12 @@ public class Player {
         this.radio = radio;
     }
 
+    public boolean isDebit() {
+        return debit;
+    }
+
     public void setDebit(boolean debit) {
         this.debit = debit;
-    }
-
-    public boolean isInsure() {
-        return insure;
-    }
-
-    public void setInsure(boolean insure) {
-        this.insure = insure;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
     }
 
     public int getHowManyDebit() {

@@ -1,14 +1,20 @@
 package com.company.Fields;
 
+import com.company.Board.Board;
+import com.company.Board.Square;
 import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RealEstate { //ready
+public class RealEstate extends Square { //ready
     Player player = new Player();
     private int housePrice = 50000;
     private boolean houseError;
+
+    public RealEstate(String name) {
+        super(name);
+    }
 
     public void getHouse() throws Exception {
         if (player.isHouse()) {
@@ -53,6 +59,11 @@ public class RealEstate { //ready
                 System.out.println("Ok. Maybe next time.");
                 break;
         }
+    }
+
+    @Override
+    public void doAction(Player player, Board board) {
+
     }
 }
 /*- Ingatlanközvetítő, itt vehetsz lakást, ára: 50.000 Ft.*/

@@ -1,6 +1,8 @@
-/*package com.company.Board;
+package com.company.Board;
 
+import com.company.Fields.*;
 import com.company.Player.Player;
+
 
 import java.util.Random;
 
@@ -8,104 +10,72 @@ public class Board {
     int currentTurn = 0;
     int totalPlayer = 0;
     Player[] players;
-    Square[] squares = new Square[40];
-    String[] names = new String[] { "House", "Villa", "Town", "City", "Peace", "Village", "Jade", "Soi 4", "White", "Dark" };
+    Square[] squares = new Square[20];
 
     public Board(int totalPlayer) {
         players = new Player[totalPlayer];
         this.totalPlayer = totalPlayer;
         for(int i = 0;i < players.length;i++){
-            players[i] = new Player(i, "Player " + (i + 1));
+            players[i] = new Player(i, "Player ");
         }
         Random rand = new Random();
         for(int i = 0;i < squares.length;i++){
-            if(i == 0){
-                squares[i] = new GoSquare("GO");
-            }else if(i == 9){
-                squares[i] = new JailSquare("Jail");
-            }else if(i == 19){
-                squares[i] = new VacationSquare("Vacation");
-            }else if(i == 29){
-                squares[i] = new GoToJailSquare("Go to Jail");
-            }else{
-                squares[i] = new HouseSquare(names[rand.nextInt(names.length)] + " " + names[rand.nextInt(names.length)], 400 + rand.nextInt(300));
+            switch (i){
+                case 0: squares[i] = new Start("Start");
+                case 1: squares[i] = new ChimneySweeper("Chimney sweeper");
+                case 2: squares[i] = new ElectroShop("Electro shop");
+                case 3: squares[i] = new Tram("Tram");
+                case 4: squares[i] = new LuckyCard("Lucky card");
+                case 5: squares[i] = new TvBurn("Burn TV");
+                case 6: squares[i] = new Littering("Littering");
+                case 7: squares[i] = new FurnitureShop("Furniture shop");
+                case 8: squares[i] = new LuckyCard("Lucky card");
+                case 9: squares[i] = new FreeParking("Free Parking");
+                case 10: squares[i] = new RealEstate("House buying");
+                case 11: squares[i] = new Hollyday("Hollyday");
+                case 12: squares[i] = new Insurer("Insurer");
+                case 13: squares[i] = new LuckyCard("Lucky card");
+                case 14: squares[i] = new BrokenWashingMachine("Broken washing machine");
+                case 15: squares[i] = new Littering("Littering");
+                case 16: squares[i] = new Lottery("Lottery");
+                case 17: squares[i] = new Bank("Bank");
+                case 18: squares[i] = new LuckyCard("Lucky card");
+                case 19: squares[i] = new Tram("Tram");
+
             }
         }
     }
-
-    public Square movePlayer(Player player, int face) {
-        return movePlayer(player, face, true);
+    public Square movePlayer(Player player, int dice) {
+        return movePlayer(player, dice, true);
     }
 
-    public Square movePlayer(Player player, int face, boolean count) {
-        if(player.isBrokeOut()){ return squares[player.getCurrentPosition()]; }
-        int newPosition = normalizePosition(player.getCurrentPosition() + face);
+    public Square movePlayer(Player player, int dice, boolean count) {
+        if(player.isBrokeOut()){
+            return squares[player.getCurrentPosition()];
+        }
+        int newPosition = normalizePosition(player.getCurrentPosition() + dice);
         player.setPosition(newPosition);
-        Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+        //Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
         squares[newPosition].doAction(player, this);
-        if(player.getMoney().isBrokeOut()){
+        /*if(player.getMoney().isBrokeOut()){
             Util.print(player, player.getName() + " has been broke out!");
             player.setBrokeOut(true);
         }else{
             if(count){
                 player.nextTurn();
             }
-        }
+        }*/
         return squares[newPosition];
     }
-
-    public boolean hasWinner() {
-        int ingame = 0;
-        for(Player player:players){
-            if(!player.isBrokeOut()){
-                ingame++;
-            }
-        }
-        return ingame <= 1;
-    }
-
-    public Player getWinner() {
-        if(!hasWinner()){ return null; }
-        for(Player player:players){
-            if(!player.isBrokeOut()){ return player; }
-        }
-        return null;
-    }
-
-    public Player getMaxMoneyPlayer() {
-        Player maxplayer = null;
-        for(Player player:players){
-            if(maxplayer == null || maxplayer.getMoney().getMoney() < player.getMoney().getMoney()){
-                maxplayer = player;
-            }
-        }
-        return maxplayer;
-    }
-
-    public int normalizePosition(int position) {
-        return position % squares.length;
-    }
-
     public Player getCurrentPlayer() {
         return players[currentTurn];
     }
-
-    public Player[] getPlayers() {
-        return players;
+    public int normalizePosition(int position) {
+        return position % squares.length;
     }
-
     public void nextTurn() {
         if(++currentTurn >= players.length){
             currentTurn = 0;
         }
     }
-
-    public Player getPlayer(int id) {
-        return players[id];
-    }
-
-    public int getTotalSquare() {
-        return squares.length;
-    }
 }
-*/

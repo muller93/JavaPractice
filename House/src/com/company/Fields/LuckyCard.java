@@ -1,12 +1,18 @@
-package com.company.Devices;
+package com.company.Fields;
 
+import com.company.Board.Board;
+import com.company.Board.Square;
 import com.company.Player.Player;
 
 import java.util.*;
 
-public class LuckyCard { //ok
+public class LuckyCard extends Square { //ok
     private String message;
     private int value;
+
+    public LuckyCard(String name) {
+        super(name);
+    }
 
     public String getMessage() {
         return message;
@@ -48,6 +54,11 @@ public class LuckyCard { //ok
         System.out.println(message); //random select from map
 
         player.setMoney(- val);
+    }
+
+    @Override
+    public void doAction(Player player, Board board) {
+
     }
 }
 /*A szerencsekártyákat véletlenszerűen kell generálni;

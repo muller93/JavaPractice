@@ -1,16 +1,21 @@
 package com.company.Fields;
 
+import com.company.Board.Board;
+import com.company.Board.Square;
 import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Bank {
+public class Bank extends Square {
     Player player = new Player();
     private boolean bankError;
     private int maxLoan = 15000;
     private int canLoan = maxLoan - player.getHowManyDebit();
-    private int scan;
+
+    public Bank(String name) {
+        super(name);
+    }
 
     public void takeUpLoan(){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
         System.out.println("Your currently debit is " + player.getHowManyDebit() + "You can take up " + canLoan);
@@ -96,6 +101,10 @@ public class Bank {
         }
     }
 
+    @Override
+    public void doAction(Player player, Board board) {
+
+    }
 }
 
 /*OTP. Itt vehetsz fel hitelt, vagy törlesztheted a meglévő tartozásodat.*/
