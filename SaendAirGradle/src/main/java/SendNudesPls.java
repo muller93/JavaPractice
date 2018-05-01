@@ -6,6 +6,8 @@ import java.util.Properties;
 public class SendNudesPls {
 
     public static void main(String[] args) {
+        Reminder reminder = new Reminder(16, 50);
+        new Reminder(16, 50);
 
         final String username = "testalukafunda@gmail.com";
         final String password = "123BOBbob";
@@ -19,7 +21,7 @@ public class SendNudesPls {
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);
+                return new PasswordAuthentication(username, password);
                     }
                 });
 
@@ -28,10 +30,18 @@ public class SendNudesPls {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("testalukafuna@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("mullernorbert93@gmail.com"));
-            message.setSubject("utálom");
-            message.setText("szar ez a feladat"
-                    + "\n\n ez is");
+                    InternetAddress.parse("qwer.kocka@gmail.com"));
+            message.setSubject("Kellemetlen");
+            message.setText("az élet igazságtalan"
+                    + "\n\n oldd meg!"
+                    + "\n\n nem tudom"
+                    + "\n\n én ehhez nem értek"
+                    + "\n\n ekszöszájzbukk"
+                    + "\n\n montenbájk"
+                    + "\n\n vágási ferike"
+                    + "\n\n ha lenne 10 ezer forintom"
+                    + "\n\n csináld meg"
+                    + "\n\n a go (nem) jó");
 
             Transport.send(message);
 
