@@ -9,14 +9,17 @@ public class SchoolBook extends Book{
     }
 
     public SchoolBook(String subject) {
+
         this.subject = "Programozás 1";
     }
 
     public String getSubject() {
+
         return subject;
     }
 
     public void setSubject(String subject) {
+
         this.subject = subject;
     }
 

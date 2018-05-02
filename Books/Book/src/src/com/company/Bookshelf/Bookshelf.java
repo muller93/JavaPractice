@@ -14,8 +14,10 @@ public class Bookshelf {
         printArray(books);
     }
     public static void bookWrite(Book book){
+
         System.out.println(book);
     }
+
     public static void printArray(Book[] books){
         for (int i = 0; i < books.length; i++){
             bookWrite(books[i]);
@@ -26,20 +28,20 @@ public class Bookshelf {
         int length = 0;
         int counter = 0;
         for (int i = 0; i < args.length; i++){
-            if (args[i].equals("regény")){
+            if (args[i].equals("Novel")){
                 length++;
-            } else if (args[i].equals("tankönyv")){
+            } else if (args[i].equals("School_book")){
                 length++;
             }
         }
         Book[] books = new Book[length];
         for (int i = 0; i < args.length; i++){
-            if (args[i].equals("regény")){
+            if (args[i].equals("Novel")){
                 Novel novel = new Novel(args[i + 1], args[i + 2], args[i + 3], Integer.parseInt(args[i + 4]));
                 books[counter] = novel;
                 counter++;
                 i += 4;
-            } else if (args[i].equals("tankönyv")){
+            } else if (args[i].equals("School_book")){
                 SchoolBook schoolBook = new SchoolBook(args[i + 1], args[i + 2], args[i + 3], Integer.parseInt(args[i + 4]), args[i + 5]);
                 books[counter] = schoolBook;
                 counter++;

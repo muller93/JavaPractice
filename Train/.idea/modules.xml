@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Railway.iml" filepath="$PROJECT_DIR$/.idea/modules/Railway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Railway_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Railway_main.iml" group="Railway" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Railway_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Railway_test.iml" group="Railway" />
       <module fileurl="file://$PROJECT_DIR$/Train.iml" filepath="$PROJECT_DIR$/Train.iml" />
     </modules>
   </component>
