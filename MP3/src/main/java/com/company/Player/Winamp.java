@@ -4,6 +4,10 @@ import com.company.Media.Mp3;
 import com.company.Media.Videoclip;
 
 public class Winamp {
+    private Mp3[] songs;
+    private int songsLength;
+    private int counter = 0;
+
     public static void main(String[] args) {
     Winamp winamp = new Winamp(Integer.parseInt(args[0]));
     winamp.adding(new Mp3("Daft Punk", "Homework", "Around the world", 430));
@@ -15,19 +19,15 @@ public class Winamp {
     winamp.songList(winamp.songs);
     }
 
-    private Mp3[] songs;
-    private int songsLength;
-    private int counter = 0;
-
-    public Winamp(int songsLength) {
+    private Winamp(int songsLength) {
         this.songs = new Mp3[songsLength];
     }
 
-    public int getSongsLength() {
+    private int getSongsLength(int i) {
         return songsLength;
     }
 
-    public void adding(Mp3 song){
+    private void adding(Mp3 song){
         if (counter < songs.length){
             songs[counter] = song;
             counter++;
@@ -35,21 +35,21 @@ public class Winamp {
             System.out.println("You already reach the playlist limit.");
         }
     }
-    public Mp3 query(int i){
+    private Mp3 query(int i){
         return songs[i];
     }
-    public void info(Mp3 song){
+    private void info(Mp3 song){
         System.out.println(song);
     }
 
-    public float avgLength(Mp3[] songs) {
+    private float avgLength(Mp3[] songs) {
         float sum = 0;
         for(int i = 0; i < songs.length; i++) {
             sum += query(i).getSongLength();
         }
         return sum / songs.length;
     }
-    public void songList(Mp3[] songs) {
+    private void songList(Mp3[] songs) {
         for(int i = 0; i < songs.length; i++) {
             info(query(i));
         }
